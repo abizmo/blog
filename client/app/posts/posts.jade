@@ -1,0 +1,4 @@
+.posts(ng-repeat="post in posts")
+  .post
+    a.post--title(href="/posts/{{ post._id}}") {{ post.title }}
+    p.post--date {{ post.date }}

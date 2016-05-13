@@ -13,7 +13,7 @@ angular.module('blogApp', [
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/posts'
       });
 
     $locationProvider.html5Mode(true);
