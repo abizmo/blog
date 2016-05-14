@@ -4,8 +4,8 @@
     span.author Author 
     | on {{ post.date | date: 'MMM dd, y HH:mm'}}
   p.post--body {{ post.body }}
-  .center
-    button.button.button--edit(href="#", ng-show="isAuthenticated()") Edit
-    button.button.button--delete(href="#", ng-show="isAuthenticated()") Delete
+  .center(ng-show="isLoggedIn()")
+    button.button.button--edit(href="#") Edit
+    button.button.button--delete(href="#") Delete
     
   
