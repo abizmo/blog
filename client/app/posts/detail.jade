@@ -1,6 +1,11 @@
 .post
   h3.post--title {{ post.title }}
-  p.post--date {{ post.date }}
+  p.post--date Submited by 
+    span.author Author 
+    | on {{ post.date | date: 'MMM dd, y HH:mm'}}
   p.post--body {{ post.body }}
-  a.button--edit(href="#",ng-show='isLoggedIn()') Edit
-  a.button--delete(href="#",ng-show='isLoggedIn()') Delete
+  .center
+    button.button.button--edit(href="#", ng-show="isAuthenticated()") Edit
+    button.button.button--delete(href="#", ng-show="isAuthenticated()") Delete
+    
+  
