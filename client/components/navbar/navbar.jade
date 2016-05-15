@@ -3,5 +3,5 @@ a.button.button--secondary(href='/posts') All posts
 .menu
   a.button.button--primary(href='/login', ng-hide='nav.isLoggedIn()', ng-class='{active: nav.isActive("/login")}') Login
   a.button.button--secondary(href='/signup', ng-hide='nav.isLoggedIn()', ng-class='{active: nav.isActive("/signup")}') Sign up
-  a.button.button--primary(href='#', ng-show='nav.isLoggedIn()') New Post
+  a.button.button--primary(href='/posts/new', ng-show='nav.isLoggedIn()') New Post
   a.button.button--secondary(href='/logout', ng-show='nav.isLoggedIn()') Logout
