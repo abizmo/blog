@@ -24,7 +24,7 @@ class NewCtrl {
       })
         .then(response => {
           // Post created, redirect to posts/:id
-          this.$location.path('/posts');
+          this.$location.path('/posts/' + response.data._id);
         })
         .catch(err => {
           err = err.data;
