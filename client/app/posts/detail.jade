@@ -5,7 +5,7 @@
     | on {{ post.date | date: 'MMM dd, y HH:mm'}}
   p.post--body {{ post.body }}
   .center(ng-show="isLoggedIn()")
-    button.button.button--edit(href="#") Edit
-    button.button.button--delete(href="#") Delete
+    a.button.button--edit(href="/posts/{{ post._id }}/edit") Edit
+    a.button.button--delete(href="#") Delete
     
   

@@ -15,5 +15,10 @@ angular.module('blogApp')
       .when('/posts/:id', {
         templateUrl: 'app/posts/detail.html',
         controller: 'DetailCtrl'
+      })
+      .when('/posts/:id/edit', {
+        templateUrl: 'app/posts/edit/edit.html',
+        controller: 'EditCtrl',
+        controllerAs: 'vm'
       });
   });
