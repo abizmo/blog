@@ -6,6 +6,6 @@
   p.post--body {{ post.body }}
   .center(ng-show="isLoggedIn()")
     a.button.button--edit(href="/posts/{{ post._id }}/edit") Edit
-    a.button.button--delete(href="#") Delete
+    button.button.button--delete(ng-click="deletePost(post)") Delete
     
   

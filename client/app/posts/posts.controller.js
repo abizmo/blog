@@ -6,10 +6,14 @@ angular.module('blogApp')
       $scope.posts = response.data;
     });
   }])
-  .controller('DetailCtrl', ['$scope', '$http', '$routeParams', 'Auth', function ($scope, $http, $routeParams, Auth) {
+  .controller('DetailCtrl', ['$scope', '$http', '$routeParams', 'Auth', '$location', function ($scope, $http, $routeParams, Auth, $location) {
     $scope.post = '';
     $scope.isLoggedIn = Auth.isLoggedIn;
     $http.get('/api/posts/' + $routeParams.id).then(response => {
       $scope.post = response.data;
     });
+    $scope.deletePost = function (post) {
+      $http.delete('/api/posts/' + post._id);
+      $location.path('/posts/');
+    };
   }]);
