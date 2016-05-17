@@ -24,7 +24,8 @@ class EditCtrl {
     if (form.$valid) {
       this.$http.put('/api/posts/' + this.$routeParams.id, {
         title: this.post.title,
-        body: this.post.body
+        body: this.post.body,
+        author: this.Auth.getCurrentUser()._id
       })
         .then(response => {
           // Post created, redirect to posts/:id

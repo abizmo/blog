@@ -12,6 +12,9 @@ angular.module('blogApp')
     $http.get('/api/posts/' + $routeParams.id).then(response => {
       $scope.post = response.data;
     });
+    $scope.isOwner = function () {
+      return $scope.post.author == Auth.getCurrentUser()._id;
+    };
     $scope.deletePost = function (post) {
       $http.delete('/api/posts/' + post._id);
       $location.path('/posts/');
