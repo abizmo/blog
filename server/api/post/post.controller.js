@@ -61,14 +61,14 @@ function handleError(res, statusCode) {
 
 // Gets a list of Posts
 export function index(req, res) {
-  return Post.find().exec()
+  return Post.find().sort({date: -1}).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
 
 // Gets a single Post from the DB
 export function show(req, res) {
-  return Post.findById(req.params.id).exec()
+  return Post.findById(req.params.id).populate('author').exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));

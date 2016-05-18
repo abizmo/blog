@@ -1,12 +1,12 @@
-.wrapper
-  h2 New post
+.post
+  h3.post--title New post
 
   form.form(name='form', ng-submit='vm.addPost(form)', novalidate='')
       .form-group
         label Title
         input(type='text', name='title', ng-model='vm.post.title', required='')
       .form-group
-        label Password
+        label Body
         textarea(name='body', ng-model='vm.post.body', required='')
       .form-group
         p.help-block(ng-show='form.title.$error.required && form.body.$error.required && vm.submitted')

@@ -1,7 +1,7 @@
 .post
   h3.post--title {{ post.title }}
   p.post--date Submited by 
-    span.author {{ post.author }} 
+    span.author {{ post.author.name }} 
     | on {{ post.date | date: 'MMM dd, y HH:mm'}}
   p.post--body {{ post.body }}
   .center(ng-show="isLoggedIn() && isOwner()")
