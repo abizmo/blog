@@ -11,7 +11,6 @@
       .form-group
         p.help-block(ng-show='form.title.$error.required && form.body.$error.required && vm.submitted')
           | Please enter a title and a body.
-        p.help-block {{ vm.errors.other }}
       .form-group
         button(type='submit')
           | Submit
