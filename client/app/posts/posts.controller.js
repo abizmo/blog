@@ -13,7 +13,7 @@ angular.module('blogApp')
       $scope.post = response.data;
     });
     $scope.isOwner = function () {
-      return $scope.post.author._id == Auth.getCurrentUser()._id;
+      return $scope.post.author._id === Auth.getCurrentUser()._id;
     };
     $scope.deletePost = function (post) {
       $http.delete('/api/posts/' + post._id);
